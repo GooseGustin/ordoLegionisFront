@@ -1,0 +1,77 @@
+
+components 
+    - Navbar
+    - Sidebar
+    - Titlebar
+    - Footer
+
+home
+    - Home
+social
+    - Question
+        - Answer
+    - Post
+        - Comment
+    - PrayerRequest
+praesidium 
+    - Praesidia
+    - Praesidium (
+        - view details 
+        - continue current meeting 
+        - continue editing current report 
+        - 
+    )
+        - WorkList
+            -
+        - Meeting
+            - AcctStatement
+                - Expenses
+            - AcctAnnouncement
+            - FinancialRecord
+            - Work 
+        - Reminder
+        - Report
+            - FunctionAttendance
+            - MembershipDetails
+            - Achievement
+            - WorkSummary
+            - FinancialSummary
+    - Curia 
+        - Announcement 
+account 
+    - Login 
+    - Profile
+    - Legionary
+contact 
+    - Feedback
+    - MessageDeveloper
+help 
+
+User Stories
+- Praesidium:
+    - User can go to Praesidia tab for a list of curia and praesidia he's member to. Here user can easily create new meeting and view current report for any praesidia 
+    - In creating a new meeting, the user will create a Meeting, a FinancialRecord, and the selected Works, all associated to the Meeting object. Prevent creation of empty meetings and such.
+    - Inside the Praesidium details user can edit praesidium details, edit worklists, edit reports, view all meetings if member or manager
+- Social
+    - User can view all of his posts, questions, and requests 
+    - Editing a question erases all its previous answers 
+- Report 
+    - Enable 'Allow non-members view preview' toggle option
+
+
+Problems:
+    - Calendar, current month having 2 days selected at the same time 
+    - WorkList, can't edit worklist -- handled 
+    - WorkList, can create multiple works of the same name
+    - WorkList, fix handleCheckBox where works are added to worklist details
+    - ReportForm, selecting submision and last submision dates is buggy, leading to misleading prepdata
+    - ReportPrepGetView, last_submission_date is being updated incorrectly
+    - Users can create empty social objects and reminders and announcements 
+    - Images in posts and announcements need a proper bootstrap component to resize appropriately
+    - Test update methods in serializers of all methods where only create methods were implemented
+    - // WorkList, cancel button leads to 404 page 
+    - Non-members and non-managers can view curia and praesidia other than their own
+    - Set title for each page 
+    - Set appropriate sidebar icons
+    - Small problem with finances, report production isn't included properly in total to praesidium. 
+        Also, I can't see the last remittance being included 
