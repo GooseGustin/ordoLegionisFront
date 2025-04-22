@@ -549,7 +549,7 @@ const MeetingForm = (props) => {
                         <label htmlFor="pres_at_meeting"><span className="me-4">President</span>
                         <input 
                             type="checkbox" 
-                            className="form-check-input"
+                            className="form-check-input mx-1"
                             onChange={handleAttendanceChange} 
                             name="pres_at_meeting" id="pres_at_meeting" 
                             defaultChecked={defaultOfficersAtMeeting.includes("President")}
@@ -560,7 +560,7 @@ const MeetingForm = (props) => {
                         <label htmlFor="vp_at_meeting"><span className="me-4">Vice President</span>
                         <input 
                             type="checkbox" 
-                            className="form-check-input"
+                            className="form-check-input mx-1"
                             onChange={handleAttendanceChange} 
                             name="vp_at_meeting" id="vp_at_meeting" 
                             defaultChecked={defaultOfficersAtMeeting.includes("Vice President")}
@@ -571,7 +571,7 @@ const MeetingForm = (props) => {
                         <label htmlFor="sec_at_meeting"><span className="me-4">Secretary</span>
                         <input 
                             type="checkbox" 
-                            className="form-check-input"
+                            className="form-check-input mx-1"
                             onChange={handleAttendanceChange} 
                             name="sec_at_meeting" id="sec_at_meeting"                             
                             defaultChecked={defaultOfficersAtMeeting.includes("Secretary")}
@@ -582,7 +582,7 @@ const MeetingForm = (props) => {
                         <label htmlFor="tres_at_meeting"><span className="me-4">Treasurer</span>
                         <input 
                             type="checkbox" 
-                            className="form-check-input"
+                            className="form-check-input mx-1"
                             onChange={handleAttendanceChange} 
                             name="tres_at_meeting" id="tres_at_meeting"
                             defaultChecked={defaultOfficersAtMeeting.includes("Treasurer")}
@@ -599,7 +599,7 @@ const MeetingForm = (props) => {
                         <label htmlFor="pres_at_curia"><span className="me-4">President</span>
                         <input 
                             type="checkbox" 
-                            className="form-check-input"
+                            className="form-check-input mx-1"
                             onChange={handleAttendanceChange} 
                             name="pres_at_curia" id="pres_at_curia" 
                             defaultChecked={defaultOfficersAtCuria.includes("President")}
@@ -610,7 +610,7 @@ const MeetingForm = (props) => {
                         <label htmlFor="vp_at_curia"><span className="me-4">Vice President</span>
                         <input 
                             type="checkbox" 
-                            className="form-check-input"
+                            className="form-check-input mx-1"
                             onChange={handleAttendanceChange} 
                             name="vp_at_curia" id="vp_at_curia" 
                             defaultChecked={defaultOfficersAtCuria.includes("Vice President")}
@@ -621,7 +621,7 @@ const MeetingForm = (props) => {
                         <label htmlFor="sec_at_curia"><span className="me-4">Secretary</span>
                         <input 
                             type="checkbox" 
-                            className="form-check-input"
+                            className="form-check-input mx-1"
                             onChange={handleAttendanceChange} 
                             name="sec_at_curia" id="sec_at_curia"                             
                             defaultChecked={defaultOfficersAtCuria.includes("Secretary")}
@@ -632,7 +632,7 @@ const MeetingForm = (props) => {
                         <label htmlFor="tres_at_curia"><span className="me-4">Treasurer</span>
                         <input 
                             type="checkbox" 
-                            className="form-check-input"
+                            className="form-check-input mx-1"
                             onChange={handleAttendanceChange} 
                             name="tres_at_curia" id="tres_at_curia"
                             defaultChecked={defaultOfficersAtCuria.includes("Treasurer")}
@@ -820,20 +820,22 @@ const MeetingForm = (props) => {
                                     <div className="row work-type-obj">{typeObj.name}
                                     </div>
                                     <div className="row">
-                                        <label htmlFor={typeObj.name+"_assigned"}>Assigned
+                                        <label htmlFor={typeObj.name+"_assigned"} className="px-4">
+                                            <span className="me-4">Assigned</span>
                                         <input 
                                             type="checkbox" 
                                             name={typeObj.name+"_assigned"} id={typeObj.name+"_assigned"}
-                                            className='ms-2 form-check-input'
+                                            className='ms-2 mx-1 me-2 form-check-input'
                                             defaultChecked={assignedWorks.includes(typeObj.name)}
                                             onChange={handleWorkChange}
                                             />
                                         </label>
-                                        <label htmlFor={typeObj.name+"_done"}>Done
+                                        <label htmlFor={typeObj.name+"_done"}  className="px-4">
+                                            <span className="-2">Done</span>
                                         <input 
                                             type="checkbox" 
                                             name={typeObj.name+"_done"} id={typeObj.name+"_done"} 
-                                            className='ms-2 form-check-input'
+                                            className='mx-1 form-check-input'
                                             defaultChecked={doneWorks.includes(typeObj.name)}
                                             onChange={handleWorkChange}
                                         /></label>

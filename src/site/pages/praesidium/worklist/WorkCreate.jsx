@@ -146,35 +146,38 @@ const WorkCreate = () => {
             
         <h2>Create a new work</h2>
         <form onSubmit={handleSubmitForm}>
-            <div className="row col-10">
-                <label htmlFor="">
-                    <span>Name</span>
+            <div className="row">
+                
+            <div className="col-12">
+                {/* <label htmlFor=""> */}
+                    <span className="col-12">Name</span>
                     <input 
                         type="text" 
                         name="name" id="" 
-                        className="form-control border border-dark"
+                        className="form-control border border-dark "
                         onChange={handleName}
                     />
-                </label>
+                {/* </label> */}
             </div>
 
-            <div className="row col-10 mt-3 ">
+            <div className="col-10 mt-3 ">
                     <label htmlFor="active">
                         <span className="me-4">Is an active work</span>
                         <input type="checkbox" name="active" id="" 
-                            className="form-check-input"
+                            className="form-check-input mx-1"
                             onChange={handleIsActive}
                         />
                     </label>
                 </div>
+            </div>
                 
 
             <div className="border border-dark rounded rounded-3 p-3 my-3">
             <p className="fs-4">Metrics (optional)</p>
             <p>Enter items to keep count of during the course of the work. Separate with commas</p>
             <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2">
-                <div className="col-10 row">
-                    <label htmlFor="">
+                <div className="col-10 mx-2 row">
+                    {/* <label htmlFor=""> */}
                         <span>No. of </span>
                         <input 
                             type="text" 
@@ -183,7 +186,7 @@ const WorkCreate = () => {
                             className="form-control border border-dark"
                             onChange={handleMetrics}
                         />
-                    </label>
+                    {/* </label> */}
                 </div>
 
             </div>

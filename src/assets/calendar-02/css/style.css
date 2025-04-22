@@ -1333,7 +1333,7 @@ pre {
 
 .table {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 12rem;
   color: #212529; }
   .table th,
   .table td {
@@ -1344,11 +1344,12 @@ pre {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6; }
   .table tbody + tbody {
-    border-top: 2px solid #dee2e6; }
+    border-top: 2px solid #dee2e6;
+    background-color: #007bff; }
 
 .table-sm th,
 .table-sm td {
-  padding: 0.3rem; }
+  padding: 1.3rem; }
 
 .table-bordered {
   border: 1px solid #dee2e6; }
@@ -8114,7 +8115,8 @@ a.text-dark:hover, a.text-dark:focus {
   .badge {
     border: 1px solid #000; }
   .table {
-    border-collapse: collapse !important; }
+    border-collapse: collapse !important; 
+}
     .table td,
     .table th {
       background-color: #fff !important; }
@@ -8251,7 +8253,7 @@ thead tr {
   font-weight: 700; }
 
 tbody tr {
-  color: #000; }
+  color: #000; width: 100%; position: relative;}
 
 tbody td {
   width: 14%;
@@ -8264,7 +8266,7 @@ tbody td {
   z-index: 0; 
 }
 tbody td:after {
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 0;
     right: 4em;
@@ -8289,13 +8291,11 @@ tbody td:after {
 
 tbody td:hover, .selected {
     /* background-color: #002752; */
-  color: goldenrod;
+  color: #fff; /* goldenrod; */
   border: none; 
 }
 tbody td:hover:after, .selected:after {
-    /* background: #2a3246;  */
-    background: #000;
-}
+    background: #2a3246; }
 
 tbody td:active {
   -webkit-transform: scale(0.7);

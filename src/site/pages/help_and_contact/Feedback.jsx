@@ -7,7 +7,7 @@ const Feedback = () => {
         <div className="sidebar">
             <nav className="nav flex-column">
                 {/* settings  */}
-                <NavLink className="nav-link" to='/praesidium'>
+                <NavLink className="nav-link " to='/praesidium'>
                     <span className="icon">
                     <i class="fa-solid fa-house"></i> 
                     </span>

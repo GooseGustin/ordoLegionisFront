@@ -1,4 +1,5 @@
-export const BASEURL = "https://mafengpam.pythonanywhere.com/api/"; // "http://localhost:8000/api/";
+export const BASEURL = "https://mafengpam.pythonanywhere.com/api/"; // 
+// export const BASEURL = "http://localhost:8000/api/";
 
 export function findAll(arr, x) {
     var results = [], 

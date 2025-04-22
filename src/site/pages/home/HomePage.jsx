@@ -28,7 +28,7 @@ const HomePage = () => {
             {/* sidebar */}
             <div className="sidebar">
                 <nav className="nav flex-column">
-                    <NavLink className="nav-link" to='social/post/create'>
+                    <NavLink className="nav-link " to='social/post/create'>
                         <span className="icon">
                             <i className="fa-solid fa-right-from-bracket fa-lg"></i> 
                         </span>

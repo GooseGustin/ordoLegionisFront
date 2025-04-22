@@ -200,7 +200,6 @@ const Help = ({ pageKey, method }) => {
                     </span>
                     <span className="description">Back</span>
                 </NavLink>
-
             </nav>
         </div>
 

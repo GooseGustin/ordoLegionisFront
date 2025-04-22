@@ -8,17 +8,6 @@ const RenderDetailsForm = ({ workTypeName, workTypeMetrics, handleFunction, work
     /* Work types are what are displayed 
         Work list is which are selected */
     const loc = 'In work list form render details'
-    // console.log(loc, 'worklistdetails', workListDetails);
-    // console.log(loc, 'worktype metrics', workTypeMetrics)
-
-    // Remove any duplicate metrics 
-    // for (let item in workListDetails) {
-    //     if (findAll(workListDetails, item).length > 1) {
-    //         // remove item 
-    //         // console.log(item, 'from workListDetails is repeated. Must remove')   
-    //     }
-    // }
-
     // Get the metrics in the worklist for this specific worktype 
     
     // specificWorkListDetail = {
@@ -38,33 +27,23 @@ const RenderDetailsForm = ({ workTypeName, workTypeMetrics, handleFunction, work
         return item.name == workTypeName;
     });
 
-    // console.log("Specific worklist detail", specificWorkListDetail);
-    // const allMetrics = specificWorkListDetail[0]
-    //     ? parseObjectKeys(specificWorkListDetail[0]['metrics'])
-    //     : [] 
-
-    // console.log(loc, 'selected metrics for', workTypeName, '::', specificWorkListDetail[0]
-    //     ? parseObjectKeys(specificWorkListDetail[0]['metrics'])
-    //     : [] 
-    // )
-
-    // console.log(loc, 'all metrics', allMetrics); 
 
     return (
         <>
-            <p className="fs-4 mt-3">{workTypeName}</p>
+            <p className="fs-4 mt-3"><strong>{workTypeName}</strong></p>
             <div className="row row-cols-lg-2 row-cols-md-2 bg-light border border-dark">
                 {
                 workTypeMetrics[0]? 
                 workTypeMetrics.map(metric => ( 
                     <div className='col' key={metric}>
                         
-                        <label htmlFor="">
+                        <label htmlFor={workTypeName + ">>>" + metric}>
                             <span className="me-4">{metric}</span>
                             <input 
                                 type="checkbox" 
                                 name={workTypeName + ">>>" + metric}
-                                className="form-check-input"
+                                id={workTypeName + ">>>" + metric}
+                                className="form-check-input mx-1"
                                 defaultChecked={
                                     specificWorkListDetail[0]
                                     ? specificWorkListDetail[0]['metrics'][metric]
@@ -79,10 +58,12 @@ const RenderDetailsForm = ({ workTypeName, workTypeMetrics, handleFunction, work
                     )
                 ): 
                 <div className="col">
+                    <label htmlFor={workTypeName + ">>>" + 'tracking'}>
                     <span className="me-4">Include this work</span>
                     <input type="checkbox" 
-                        name={workTypeName + ">>>" + 'tracking'} id=""
-                        className='form-check-input'
+                        name={workTypeName + ">>>" + 'tracking'} 
+                        id={workTypeName + ">>>" + 'tracking'}
+                        className='form-check-input mx-1'
                         defaultChecked={
                             specificWorkListDetail[0]
                             ? specificWorkListDetail[0]['tracking']
@@ -91,6 +72,7 @@ const RenderDetailsForm = ({ workTypeName, workTypeMetrics, handleFunction, work
                         value='tracking'
                         onChange={handleFunction}
                     />
+                    </label>
 
                 </div>
                 }

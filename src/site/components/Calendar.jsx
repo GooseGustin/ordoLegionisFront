@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../../assets/calendar-02/css/style.css"; // Ensure you have the corresponding styles
+// import "../../assets/calendar-02/css/style.css";
+// import "../../assets/calendar_02/calendar-02/css/style.css";
 
 const Calendar = ({ handleDateChange }) => {
     const today = new Date();
@@ -57,13 +58,13 @@ const Calendar = ({ handleDateChange }) => {
                     <thead>
                         <tr>
                             {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-                                <th key={day}>{day}</th>
+                                <th key={day} className='px-3'>{day}</th>
                             ))}
                         </tr>
                     </thead>
                     <tbody>
                         {[...Array(6)].map((_, week) => (
-                            <tr key={week}>
+                            <tr key={week} >
                                 {[...Array(7)].map((_, day) => {
                                     const date = day + week * 7 - firstDay + 1;
                                     return (
@@ -72,9 +73,9 @@ const Calendar = ({ handleDateChange }) => {
                                             className={
                                                 date > 0 && date <= daysInMonth
                                                     ? date === selectedDay && month === today.getMonth() && year === today.getFullYear()
-                                                        ? "today selected"
-                                                        : "valid"
-                                                    : "empty"
+                                                        ? "today selected text-succfess px-4"
+                                                        : "valid px-4"
+                                                    : "empty "
                                             }
                                             onClick={() => date > 0 && date <= daysInMonth && handleDayClick(date)}
                                         >
