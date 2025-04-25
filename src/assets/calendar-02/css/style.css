@@ -8289,13 +8289,19 @@ tbody td:after {
         -o-transition: none;
         transition: none; } }
 
-tbody td:hover, .selected {
-    /* background-color: #002752; */
-  color: #fff; /* goldenrod; */
+/* tbody td:hover, .selected {
+  color: #fff; 
   border: none; 
 }
 tbody td:hover:after, .selected:after {
+    background: #2a3246; } */
+
+.calendar tbody td:hover, .selected {
+    color: goldenrod; 
+    border: none; }
+.calendar tbody td:hover:after, .selected:after {
     background: #2a3246; }
+
 
 tbody td:active {
   -webkit-transform: scale(0.7);

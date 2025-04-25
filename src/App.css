@@ -1,9 +1,4 @@
-/*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+/*  
  :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -74,7 +69,7 @@
   
   p {
     margin-top: 0;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem; word-wrap: break-word;}
   
   abbr[title],
   abbr[data-original-title] {
@@ -8179,7 +8174,15 @@
     background-repeat: no-repeat;
     background-position: center center; }
   
-  .elegant-calencar {
+
+
+
+
+
+
+
+
+.elegant-calencar {
     max-width: 700px;
     text-align: center;
     position: relative;
@@ -8286,10 +8289,10 @@
           -o-transition: none;
           transition: none; } }
   
-tbody td:hover, .selected {
-    color: goldenrod; /* #fff */
+.calendar tbody td:hover, .selected {
+    color: goldenrod; 
     border: none; }
-tbody td:hover:after, .selected:after {
+.calendar tbody td:hover:after, .selected:after {
     background: #2a3246; }
 
 
@@ -8339,240 +8342,245 @@ tbody td:hover:after, .selected:after {
     -ms-transform: scale(0.8);
     transform: scale(0.8); }
   
+ */
 
-/* ################################################################ */
-
-#root {
-  max-width: 1280px;
-  /* margin: 0 auto;
-  padding: 2rem; */
-  /* text-align: center; */
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+ #root {
+    max-width: 1280px;
+    /* margin: 0 auto;
+    padding: 2rem; */
+    /* text-align: center; */
   }
-  to {
-    transform: rotate(360deg);
+  
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-/* sidebar */
-.sidebar {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    height: 100%; 
-    width: 180px; 
-    padding-top: 20px; 
-    margin-top: 40px;
-    background-color: rgb(25,25,25);
-    transition: width 0.3s;
-}
-
-.sidebar .nav-link {
-    display: flex; 
-    align-items: center; 
-    gap: 20px; 
-    padding: 10px 20px; 
-    color: white; 
-}
-
-.sidebar .description {
-    font-size: 14px; 
-}
-
-.sidebar .nav-link:hover {
-    background-color: rgb(0, 0, 0, 0.5); 
-    color: white;
-}
-
-.sidebar .sub-menu {
-    background-color: #076dcd69; 
-    padding-left: 3%; 
-    padding-right: 3%;
-}
-
-.sidebar a.active {
-    color: rgb(22, 227, 230);
-    text-decoration: none;
-}
-
-.sider {
-    background-color: rgb(20, 20, 20);
-    backdrop-filter: blur(10px);
-}
-
-.main-content {
-    height: 100%; 
-    margin-top: 50px;
-    margin-left: 200px; 
-    padding: 20px; 
-}
-
-.page {
-    /* width: 900px; */
-    width: 8.5in;
-    height: 11in;
-    font-size: smaller;
-    margin-right: 200px;
-}
-
-/* .page tr {
-    height: .5em
-} */
-
-.page p {
-    margin-bottom: 5px;
-}
-
-
-/* table.fxn-attendance .table-index {
-    width: 20px;
-} */
-
-table.finance, table.attendance {
-    table-layout: fixed;
-}
-
-table.finance .table-index {
-    width: 50px;
-    text-align: center; /* Optional: Center align text */
-    white-space: nowrap; /* Optional: Prevent text wrapping */
-    overflow: hidden; /* Optional: Hide overflow content */
-}
-
-table.attendance .table-index {
-    width: 50px;
-    text-align: center; /* Optional: Center align text */
-    white-space: nowrap; /* Optional: Prevent text wrapping */
-    overflow: hidden; /* Optional: Hide overflow content */
-}
-
-table.attendance .function-name {
-    width: 200px;
-    text-align: center; /* Optional: Center align text */
-    white-space: nowrap; /* Optional: Prevent text wrapping */
-    overflow: hidden; /* Optional: Hide overflow content */
-}
-
-th.amount, td.amount {
-    width: 100px;
-    text-align: center; /* Optional: Center align text */
-    white-space: nowrap; /* Optional: Prevent text wrapping */
-    overflow: hidden; /* Optional: Hide overflow content */
-}
-
-table.finance .description {
-    width: 300px;
-    text-align: center; /* Optional: Center align text */
-    white-space: nowrap; /* Optional: Prevent text wrapping */
-    overflow: hidden; /* Optional: Hide overflow content */
-}
-
-table.audit>td {
-    height: fit-content;
-}
-
-.table-date {
-    width: 20px;
-}
-
-img.vexillium {
-    /* margin-left: 0px; */
-    width: 100px; 
-    height: 190px;
-}
-
-.sider a.active {
-    /* color: rgb(22, 227, 230);
-    text-decoration: none; */
-    margin-top: auto; 
-    color: rgb(220, 45, 45); 
-}
-
-.sider a {
-    color: white; 
-    text-decoration: none; 
-    margin-top: auto;
-}
-
-.post {
-    border-right: 19px thick black;
-}
-
-span>i {
-    cursor: pointer;
-}
-
-.nav-logo {
-    width: 40px; 
-    height: 40px; 
-    margin-right: 10px;
-}
-
-.work-type-obj {
-    color: rgb(54, 54, 236);
-}
-
-.finance table tr .text-center {
-    min-width: 115px;
-}
-
-.answer-box {
-    background-color: rgb(90, 79, 79);
-    color: rgba(255, 255, 255, 0.594);
-}
-
-.answer-box .answer-time-stamp {
-    color:rgb(22, 227, 230);
-}
-
-@media (max-width: 500px) {
-    .sidebar {
-        width: 60px; 
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
     }
-    .sidebar .description {
-        display: none; 
+    to {
+      transform: rotate(360deg);
     }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  
+  .card {
+    padding: 2em;
+  }
+  
+  .read-the-docs {
+    color: #888;
+  }
+  
+  /* sidebar */
+  .sidebar {
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      height: 100%; 
+      width: 180px; 
+      padding-top: 20px; 
+      margin-top: 40px;
+      background-color: rgb(25,25,25);
+      transition: width 0.3s;
+  }
+  
+  .sidebar .nav-link {
+      display: flex; 
+      align-items: center; 
+      gap: 20px; 
+      padding: 10px 20px; 
+      color: white; 
+  }
+  
+  .sidebar .description {
+      font-size: 14px; 
+  }
+  
+  .sidebar .nav-link:hover {
+      background-color: rgb(0, 0, 0, 0.5); 
+      color: white;
+  }
+  
+  .sidebar .sub-menu {
+      background-color: #076dcd69; 
+      padding-left: 3%; 
+      padding-right: 3%;
+  }
+  
+  .sidebar a.active {
+      color: rgb(22, 227, 230);
+      text-decoration: none;
+  }
+  
+  .sider {
+      background-color: rgb(20, 20, 20);
+      backdrop-filter: blur(10px);
+  }
+  
+  .main-content {
+      height: 100%; 
+      margin-top: 50px;
+      margin-left: 200px; 
+      padding: 20px; 
+  }
+  
+  .page {
+      /* width: 900px; */
+      width: 8.5in;
+      height: 11in;
+      font-size: smaller;
+      margin-right: 200px;
+  }
+  
+  /* .page tr {
+      height: .5em
+  } */
+  
+  .page p {
+      margin-bottom: 5px; 
+  }
+  
+  
+  /* table.fxn-attendance .table-index {
+      width: 20px;
+  } */
+  table {
+      width: 100%;
+  }
+  
+  table.finance, table.attendance {
+      table-layout: fixed;
+  }
+  
+  table.finance .table-index {
+      width: 50px;
+      text-align: center; /* Optional: Center align text */
+      white-space: nowrap; /* Optional: Prevent text wrapping */
+      overflow: hidden; /* Optional: Hide overflow content */
+  }
+  
+  table.attendance .table-index {
+      width: 50px;
+      text-align: center; /* Optional: Center align text */
+      white-space: nowrap; /* Optional: Prevent text wrapping */
+      overflow: hidden; /* Optional: Hide overflow content */
+  }
+  
+  table.attendance .function-name {
+      width: 200px;
+      text-align: center; /* Optional: Center align text */
+      white-space: nowrap; /* Optional: Prevent text wrapping */
+      overflow: hidden; /* Optional: Hide overflow content */
+  }
+  
+  th.amount, td.amount {
+      width: 100px;
+      text-align: center; /* Optional: Center align text */
+      white-space: nowrap; /* Optional: Prevent text wrapping */
+      overflow: hidden; /* Optional: Hide overflow content */
+  }
+  
+  table.finance .description {
+      width: 300px;
+      text-align: center; /* Optional: Center align text */
+      white-space: nowrap; /* Optional: Prevent text wrapping */
+      overflow: hidden; /* Optional: Hide overflow content */
+  }
+  
+  table.audit>td {
+      height: fit-content;
+  }
+  
+  td.table-date, td.table-category {
+      width: 150px;
+  }
 
-    .sidebar .nav-link {
-        justify-content: center; 
-    }
-    
-    .main-content {
-        margin-left: 60px;
-    }
-
-    .sider {
-        background-color: rgb(20, 20, 20);
-    }
-}
+  
+  img.vexillium {
+      /* margin-left: 0px; */
+      width: 100px; 
+      height: 190px;
+  }
+  
+  .sider a.active {
+      /* color: rgb(22, 227, 230);
+      text-decoration: none; */
+      margin-top: auto; 
+      color: rgb(220, 45, 45); 
+  }
+  
+  .sider a {
+      color: white; 
+      text-decoration: none; 
+      margin-top: auto;
+  }
+  
+  .post {
+      border-right: 19px thick black;
+  }
+  
+  span>i {
+      cursor: pointer;
+  }
+  
+  .nav-logo {
+      width: 40px; 
+      height: 40px; 
+      margin-right: 10px;
+  }
+  
+  .work-type-obj {
+      color: rgb(54, 54, 236);
+  }
+  
+  .finance table tr .text-center {
+      min-width: 115px;
+  }
+  
+  .answer-box {
+      background-color: rgb(90, 79, 79);
+      color: rgba(255, 255, 255, 0.594);
+  }
+  
+  .answer-box .answer-time-stamp {
+      color:rgb(22, 227, 230);
+  }
+  
+  @media (max-width: 500px) {
+      .sidebar {
+          width: 60px; 
+      }
+      .sidebar .description {
+          display: none; 
+      }
+  
+      .sidebar .nav-link {
+          justify-content: center; 
+      }
+      
+      .main-content {
+          margin-left: 60px;
+      }
+  
+      .sider {
+          background-color: rgb(20, 20, 20);
+      }
+  }
+  
+  

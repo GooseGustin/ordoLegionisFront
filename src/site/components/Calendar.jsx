@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "../../assets/calendar-02/css/style.css";
+import "../../assets/calendar-02/css/style.css";
 // import "../../assets/calendar_02/calendar-02/css/style.css";
 
 const Calendar = ({ handleDateChange }) => {
@@ -58,7 +58,7 @@ const Calendar = ({ handleDateChange }) => {
                     <thead>
                         <tr>
                             {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-                                <th key={day} className='px-3'>{day}</th>
+                                <th key={day} className='px-md-3 px-lg-4'>{day}</th>
                             ))}
                         </tr>
                     </thead>
@@ -73,8 +73,8 @@ const Calendar = ({ handleDateChange }) => {
                                             className={
                                                 date > 0 && date <= daysInMonth
                                                     ? date === selectedDay && month === today.getMonth() && year === today.getFullYear()
-                                                        ? "today selected text-succfess px-4"
-                                                        : "valid px-4"
+                                                        ? "today selected text-succfess px-5"
+                                                        : "valid px-md-4 px-lg-5"
                                                     : "empty "
                                             }
                                             onClick={() => date > 0 && date <= daysInMonth && handleDayClick(date)}

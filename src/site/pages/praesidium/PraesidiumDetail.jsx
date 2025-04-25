@@ -146,7 +146,7 @@ const PraesidiumDetail = () => {
                     
                     <p className="fs-4 p-2 bg-secondary text-light">Location</p>
 
-                    <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2">
+                    <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 px-3">
                         <div className="col-5 col-md-5 col-lg-6 col-sm-10">
                             <label htmlFor="">
                                 <span className="me-1 fw-bold">State:</span>

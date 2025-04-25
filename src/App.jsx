@@ -499,7 +499,7 @@ function App() {
 
                 <Route path='contact' element={<Feedback />} />
 
-                <Route path='*' element={<NotFound />} />
+                <Route path={'*'} element={<NotFound />} />
             </Route>
         )
     )

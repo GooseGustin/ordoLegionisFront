@@ -176,7 +176,7 @@ const RenderMembership = ({ memberObj, includeIntermediate }) => {
             if (name) {
                 return (
                     <tr key={name}>
-                        <td>{name}</td>
+                        <td className='table-category'>{name}</td>
                         <td className='text-center'>{memberObj[item][0]}</td>
                         {includeIntermediate && <td className='text-center'>{memberObj[item][1]}</td>}
                         <td className='text-center'>{memberObj[item][2]}</td>
@@ -185,7 +185,7 @@ const RenderMembership = ({ memberObj, includeIntermediate }) => {
             }
         })}
         <tr>
-            <td>Total members</td>
+            <td className='table-category'>Total members</td>
             <td className='text-center'>{totalMembersSenior}</td>
             {includeIntermediate && <td className='text-center'>{totalMembersInter}</td>}
             <td className='text-center'>{totalMembersJunior}</td>
@@ -580,9 +580,9 @@ const Preview = () => {
                                 <p>EMAIL: {curia.email}</p>
                                 <p>PRAESIDIUM ANNUAL REPORT</p>
                             </div>
-                            <div className="col-2  p-5">
+                            {/* <div className="col-2  p-5">
                                 
-                            </div>
+                            </div> */}
                         </div>
                         <div className="row mb-3"> {/* Submission dates */}
                             <div className="col">
@@ -592,23 +592,39 @@ const Preview = () => {
                                 <span className="fw-bold">Date of Last Report:</span> {formatDate(report.last_submission_date)[0]}
                             </div>
                         </div>
-                        <div className="row"> {/* Meeting details */}
-                            <p><span className="fw-bold me-1">1. Name of Praesidium:</span>{praesidium.name}</p>
-                            <p><span className="fw-bold me-1">2. Address:</span>{praesidium.parish}</p>
-                            <div className="row mb-3">
-                                <div className="col">
-                                    <span className="fw-bold me-1">3. Report No.:</span>{report.report_number}
+                        <div className="row "> {/* Meeting details */}
+                            <ol>
+                                <li className='col-12'>
+                                <p><span className="fw-bold me-1">Name of Praesidium:</span>{praesidium.name}</p><p><span></span></p>
+                                </li>
+                                <li className='col-12'>
+                                <p><span className="fw-bold me-1">Address:</span>{praesidium.parish}</p>
+                                </li>
+                                <li className='col-12'>
+                                <div className="row mb-3">
+                                    <div className="col-4">
+                                        <span className="fw-bold me-1">Report No.:</span>{report.report_number}
+                                    </div>
+                                    <div className="col-8">
+                                        <span className="fw-bold me-1">Date of Inauguration:</span>{formatDate(praesidium.inaug_date)[0]}
+                                    </div>
                                 </div>
-                                <div className="col">
-                                    <span className="fw-bold me-1">Date of Inauguration:</span>{formatDate(praesidium.inaug_date)[0]}
-                                </div>
-                            </div>
-                            <p><span className="fw-bold me-1">4. Day/Time/Venue of Meeting:</span>{praesidium.meeting_time}, {praesidium.address}</p>
-                            <p><span className="fw-bold me-1">5. Period of Report:</span>{report.report_period}</p>
-                            <p><span className="fw-bold me-1">6. Date, Names and Praesidium of Last Curia Visitors:</span> {formatDate(report.last_curia_visit_date)[0]}, {report.last_curia_visitors}</p>
+                                </li>
+                                <li className='col-12'>
+                                    <p><span className="fw-bold me-1">Day/Time/Venue of Meeting: </span>{praesidium.meeting_time}, {praesidium.address}</p>
+                                </li>
+                                <li className="col-12">
+                                    <p><span className="fw-bold me-1">Period of Report:</span>{report.report_period}</p>
+                                </li>
+                                <li className="col-12">
+                                    <p><span className="fw-bold me-1">Date, Names and Praesidium of Last Curia Visitors:</span> {formatDate(report.last_curia_visit_date)[0]}, {report.last_curia_visitors}</p>
+                                </li>
+                            </ol>
+                            
+                            
                         </div>
                         <div className="row"> {/* Officers details */}
-                            <p className='title mt-2'><span className="fw-bold">7. Officers Details</span></p>
+                            <p className='title mt-2 col-12'><span className="fw-bold">7. Officers Details</span></p>
                             <table className=" table-bordered table-condensed">
                                 <thead>
                                     <tr>
@@ -694,11 +710,11 @@ const Preview = () => {
                 <div className="row mx-3 container"> 
                     <div className="col mt-3 container px-5">
                         <div className="row">{/* Membership */}
-                            <p className='title'><span className="fw-bold">10. Membership</span></p>
+                            <p className='col-12 title'><span className="fw-bold">10. Membership</span></p>
                             <table className="table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Category</th>
+                                        <th className='table-category'>Category</th>
                                         <th className='text-center'>Senior</th>
                                         {includeIntermediate && <th className='text-center'>Intermediate</th>}
                                         <th className='text-center'>Junior</th>
@@ -713,7 +729,7 @@ const Preview = () => {
                             </table>
                         </div>
                         <div className="row"> {/* Meetings and Attendance */}
-                            <p className="fw-bold mt-2">11. Meetings and Attendace</p>
+                            <p className="col-12 fw-bold mt-2">11. Meetings and Attendace</p>
                             <table className='table-bordered'>
                                 <thead>
                                     <tr>
@@ -730,15 +746,15 @@ const Preview = () => {
                                     </tr>
                                 </tbody>
                             </table>
-                            <p><span className="fs-bold me-1">Reason for poor attendance:</span>{report.poor_attendance_reason}</p>
+                            <p><span className="col-12 fs-bold me-1">Reason for poor attendance:</span>{report.poor_attendance_reason}</p>
                         </div>
                         <div className="row"> {/* Works Undertaken */}
-                            <p className="fw-bold mt-2">12. Works Undertaken</p>
+                            <p className="fw-bold mt-2 col-12">12. Works Undertaken</p>
                             <p><strong>Active: </strong>{listOutWorks(report.work_summary, false)}</p>
                             <p><strong>Others: </strong>{listOutWorks(report.work_summary, true)}</p>
                         </div>
                         <div className="row"> {/* Efforts Made */}
-                            <p className="fw-bold">13. Efforts Made</p>
+                            <p className="fw-bold col-12">13. Efforts Made</p>
                             <table className="table-bordered table-condensed">
                                 <tbody>
                                 <RenderWorksInCells 
@@ -780,7 +796,7 @@ const Preview = () => {
                             </table>
                         </div>
                         <div className="row mb-4"> {/* Achievements */}
-                            <p><strong>14. Achievements Recorded</strong></p>
+                            <p className='col-12'><strong>14. Achievements Recorded</strong></p>
                             <table className="table-bordered">
                                 <thead>
                                     <tr className='text-center'>
@@ -807,7 +823,7 @@ const Preview = () => {
                             <p><strong>15. Plans for Extension Work:</strong> {report.extension_plans}</p>
                         </div>
                         <div className="row"> {/* Functions Attendance */}
-                            <p><strong>16. Legion Functions with Attendance</strong></p>
+                            <p className='col-12'><strong>16. Legion Functions with Attendance</strong></p>
                             <table className="table-bordered attendance">
                                 <thead>
                                     <tr>
@@ -947,45 +963,41 @@ const Preview = () => {
                             </table>
                         </div>
                         <div className="row mb-4"> {/* Conclusion */}
-                            <p><strong>18. Were the finances audited? </strong>{report.audited? 'Yes': 'No'}</p>
-                            <p><strong>19. Problems: </strong>{report.problems}</p>
-                            <p><strong>20. Was the report read and accepted by members before submission? </strong>{report.read_and_accepted? 'Yes': 'No'}</p>
-                            <p><strong>21. Final Remarks: </strong>{report.remarks}</p>
-                            <p><strong>22. Conclusion: </strong>{report.conclusion}</p>
+                            <p className='col-12'><strong>18. Were the finances audited? </strong>{report.audited? 'Yes': 'No'}</p>
+                            <p className='col-12'><strong>19. Problems: </strong>{report.problems}</p>
+                            <p className='col-12'><strong>20. Was the report read and accepted by members before submission? </strong>{report.read_and_accepted? 'Yes': 'No'}</p>
+                            <p className='col-12'><strong>21. Final Remarks: </strong>{report.remarks}</p>
+                            <p className='col-12'><strong>22. Conclusion: </strong>{report.conclusion}</p>
                         </div>
-                        <div className="row mb-4"> {/* Signatures */}
-                            <div className="row px-5">
-                                <div className="col">
-                                    <div className="row">______________________</div>
-                                    <div className="row text-center pe-5">
-                                        <div className="col"><strong>{praesidium.president}</strong></div>
-                                    </div>
-                                    <div className="row text-center pe-5">
-                                        <div className="col"><strong>President</strong></div>
-                                    </div>
-                                </div>
-                                <div className="col-5"></div>
-                                <div className="col">
-                                    <div className="row">______________________</div>
-                                    <div className="row text-center pe-5">
-                                        <div className="col"><strong>{praesidium.secretary}</strong></div>
-                                    </div>
-                                    <div className="row text-center pe-5">
-                                        <div className="col"><strong>Secretary</strong></div>
-                                    </div>
-                                </div>
-                            </div>
+
+                        <div className="row mb-1"> {/* Signatures */}
+                            <div className="col-5 me-5">______________________</div>
+                            <div className="col-2"></div>
+                            <div className="col-5 ms-5">______________________</div>
                         </div>
+                        <div className="row ">
+                            <div className="col-5 me-5"><strong>{praesidium.president}</strong></div>
+                            <div className="col-2"></div>
+                            <div className="col-5 ms-5"><strong>{praesidium.secretary}</strong></div>
+                        </div>
+                        <div className="row ">
+                            <div className="col-5 me-5"><strong>President</strong></div>
+                            <div className="col-2"></div>
+                            <div className="col-5 ms-5"><strong>Secretary</strong></div>
+                        </div>
+
                         <div className="row mb-4 mt-4"> {/* Spiritual Director's Comment */}
                             <p><strong>Spiritual director's comment:  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........ ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........ ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  ....... ........  </strong></p>
                         </div>
-                        <div className="row mb-4"> {/* Spiritual Director's Signature */}
-                            <div className="row justify-content-center">
+                        <div className=" mb-4"> {/* Spiritual Director's Signature */}
+                            <div className="row">
                                 <div className="col text-center ">
                                     <div className="row text-center">
+                                        {/* <div className="col-4"></div> */}
                                         <div className="col"><strong>______________________</strong></div>
+                                        {/* <div className="col-4"></div> */}
                                     </div>
-                                    <div className="row text-center ">
+                                    <div className="row text-center align-center">
                                         <div className="col"><strong>{praesidium.spiritual_director}</strong></div>
                                     </div>
                                     <div className="row text-center ">
@@ -1002,7 +1014,7 @@ const Preview = () => {
                 <div className="row mx-3 container"> 
                     <div className="col mt-3 container px-5">
                         <div className="row mb-4"> {/* Auditor's report */}
-                            <p className='text-center h5 text-dark'><strong>Auditor's Report</strong></p>
+                            <p className='text-center h5 text-dark col-12'><strong>Auditor's Report</strong></p>
                             <table className=" table-bordered finance audit">
                                 <thead className="">
                                     <tr> {/* Top header row */}
@@ -1061,7 +1073,7 @@ const Preview = () => {
                             </table>
                         </div>
                         <div className="row mb-4"> {/* Analysis */}
-                            <p className='text-center h5 text-dark'><strong>Analysis</strong></p>
+                            <p className='text-center h5 text-dark col-12'><strong>Analysis</strong></p>
                             <table className="table-bordered finance">
                                 <thead>
                                     <tr>
@@ -1133,7 +1145,7 @@ const Preview = () => {
                 <div className="row mx-3 container"> 
                     <div className="col mt-3 container px-5">
                         <div className="row mb-4"> {/* Breakdown */}
-                            <p className='text-center h5 text-dark'><strong>Breakdown of Expenditure</strong></p>
+                            <p className='text-center h5 text-dark col-12'><strong>Breakdown of Expenditure</strong></p>
                             <table className="attendance table-bordered finance audit">
                                 <thead className="">
                                     <tr> {/* Top header row */}
@@ -1170,12 +1182,12 @@ const Preview = () => {
                             </table>
                         </div>
                         <div className="row mb-4"> {/* Conclusion */}
-                            <p><strong>Observations:</strong></p>
-                            <p><br /></p>
-                            <p><strong>Recommendations:</strong></p>
-                            <p><br /></p>
-                            <p><strong>Conclusion:</strong></p>
-                            <p><br /></p>
+                            <p className='col-12'><strong>Observations:</strong></p>
+                            <p className='col-12'><br /></p>
+                            <p className='col-12'><strong>Recommendations:</strong></p>
+                            <p className='col-12'><br /></p>
+                            <p className='col-12'><strong>Conclusion:</strong></p>
+                            <p className='col-12'><br /></p>
                         </div>
                         <div className="row mb-4">
                             <div className="col">
@@ -1208,7 +1220,7 @@ const Preview = () => {
             <div className="my-4 ms-3">
                 <div className="row">
                     {/* <div className="col-12"> */}
-                        <button className="btn btn-outline-info" onClick={handleDownload}>Download</button>
+                        <button className="btn btn-outline-info col-12" onClick={handleDownload}>Download</button>
                     {/* </div> */}
                 </div>
             </div>

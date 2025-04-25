@@ -1188,9 +1188,9 @@ const ReportForm = ({ method }) => {
 
                 {/* Curia */}
                 <div className="row border border-dark rounded rounded-3 p-3 my-2">
-                    <p className="fs-3 text-primary">Curia</p>
-                    <hr />
-                    <p className="fs-4">Visiting</p> {/* Date of last visit by curia */}
+                    <p className="fs-3 text-primary col-12">Curia</p>
+                    {/* <hr /> */}
+                    <p className="fs-4 col-12">Visiting</p>
                     <div className="col">
                         <label htmlFor="last_curia_visit_date">
                         Date of last visit by curia: <input
@@ -1215,10 +1215,10 @@ const ReportForm = ({ method }) => {
                         ></textarea>
                     </div>
                     
-                    <hr className="mt-4" />
-                    <p className="fs-4">Officers Attendance</p>
+                    {/* <hr className="mt-4" /> */}
+                    <p className="fs-4 mt-4">Officers Attendance</p>
 
-                    <div className="row">
+                    <div className="row px-3">
                         <table className="table-bordered">
                             <thead>
                                 <tr>
@@ -1391,7 +1391,7 @@ const ReportForm = ({ method }) => {
 
                 {/* Praesidium */}
                 <div className="row border border-dark rounded rounded-3 p-3 my-2">
-                    <p className="fs-3 text-primary">Praesidium</p>
+                    <p className="fs-3 text-primary col-12">Praesidium</p>
                     {/* <hr className="mt-4" /> */}
 
                     <p className="fs-4">Officers Attendance</p>
@@ -1419,7 +1419,7 @@ const ReportForm = ({ method }) => {
                     </div>
 
 
-                    <div className="row mt-4">
+                    <div className="row mt-4 px-3">
                         <table className="table-bordered">
                             <thead>
                                 <tr>
@@ -1624,14 +1624,14 @@ const ReportForm = ({ method }) => {
                 
                 {/* Membership */}
                 <div className="row border border-dark rounded rounded-3 p-3 my-2">
-                    <p className="fs-3 text-primary">Membership</p>
+                    <p className="fs-3 text-primary col-12">Membership</p>
                     <div className="row my-2 text-dark">
                         <div className="col">
                             <label htmlFor="include_intermediate">
                                 Include Intermediates in report: 
                                 <input type="checkbox" 
                                     name="include_intermediate" id="" 
-                                    className="form-check-input ms-2"
+                                    className="form-check-input ms-2 mx-2"
                                     defaultChecked={reportFormData.include_intermediate? 'checked': ''}
                                     onChange={handleReportCheck}
                                 />
@@ -1658,14 +1658,14 @@ const ReportForm = ({ method }) => {
 
                 {/* Achievements */}
                 <div className="row border border-dark rounded rounded-3 p-3 my-2">
-                    <p className="fs-3 text-primary">Achievements</p>
+                    <p className="fs-3 text-primary col-12">Achievements</p>
                     <div className="row my-2 text-dark">
                         <div className="col">
                             <label htmlFor="include_empty_achievements">
                                 Include empty achievement rows in report: 
                                 <input type="checkbox" 
                                     name="include_empty_achievements" id="" 
-                                    className="form-check-input ms-2"
+                                    className="form-check-input ms-2 mx-2"
                                     defaultChecked={reportFormData.include_intermediate? 'checked': ''}
                                     onChange={handleReportCheck}
                                 />
@@ -1796,7 +1796,7 @@ const ReportForm = ({ method }) => {
                                         <label htmlFor="include_total"><span className="me-4">Include Total No.</span>
                                             <input 
                                                 type="checkbox" name={summary.type + "_total"} id=""
-                                                className='form-check-input rounded rounded-3 border border-dark'
+                                                className='form-check-input rounded rounded-3 border border-dark mx-2'
                                                 onChange={handleWorkTotalOrAverage}
                                                 defaultChecked={
                                                     reportFormData.work_total_and_average[summary.type]?
@@ -1811,7 +1811,7 @@ const ReportForm = ({ method }) => {
                                         <label htmlFor="include_avg"><span className="me-4">Include Average No.</span>
                                             <input 
                                                 type="checkbox" name={summary.type + "_average"} id=""
-                                                className='form-check-input rounded rounded-3 border border-dark'
+                                                className='form-check-input rounded rounded-3 border border-dark mx-2'
                                                 onChange={handleWorkTotalOrAverage}
                                                 defaultChecked={
                                                     reportFormData.work_total_and_average[summary.type]?
@@ -2023,7 +2023,7 @@ const ReportForm = ({ method }) => {
                             }
                         </tbody>
                     </table>
-                    <div className="row my-4">
+                    <div className="row">
                         <div className="col-6">
                             Cost of report production:
                             <input type="number" name="report_production" id="" 
@@ -2096,7 +2096,7 @@ const ReportForm = ({ method }) => {
                             Was this report read and accepted by the members? 
                             <input type="checkbox" 
                                 name="read_and_accepted" id="" 
-                                className="form-check-input ms-2"
+                                className="form-check-input ms-2 mx-2"
                                 defaultChecked={reportFormData.read_and_accepted? 'checked': ''}
                                 onChange={handleReportCheck}
                             />
